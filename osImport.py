@@ -14,3 +14,4 @@ with open(caminho) as arquivo:
         print("esse local não existe")
 
 print("teste")
+print("teste2")
