@@ -12,3 +12,5 @@ with open(caminho) as arquivo:
             print("isso é uma pasta")
     else:
         print("esse local não existe")
+
+print("teste")
