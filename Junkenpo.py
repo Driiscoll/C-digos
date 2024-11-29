@@ -33,7 +33,7 @@ while True:
             print("jogo empatado")
 
         print("\nSegue placar do jogo:\nJogador: ",placarPlayer,"\nCPU: ",placarCpu)
-            
+        
         novamente = input("\nGostaria de jogar novamente?\n1 = sim\n2 = não\n")
         if novamente != "1":
             break
