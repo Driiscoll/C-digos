@@ -5,7 +5,7 @@ placarCpu = 0
 while True:
     try:
         opcoes = ["papel", "pedra", "tesoura"]
-        player = input("pedra, papel ou tesoura: ")
+        player = input("pedra, papel ou tesoura: ").lower()
         if player not in opcoes:
             print("Escolha inválida, tente novamente:\n")
             continue
