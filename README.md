@@ -1,1 +1,1 @@
-Códigos em Python, teste mais ideias 
+Códigos em Python, teste e ideias 
