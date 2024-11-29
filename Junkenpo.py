@@ -1,14 +1,15 @@
 from random import choice
-valor = True
 placarPlayer = 0
 placarCpu = 0
 
-while valor == True:
+while True:
     try:
-        cpu = ["papel", "pedra", "tesoura"]
+        opcoes = ["papel", "pedra", "tesoura"]
         player = input("pedra, papel ou tesoura: ")
-        cpu = choice(cpu)
-
+        if player not in opcoes:
+            print("Escolha inválida, tente novamente:\n")
+            continue
+        cpu = choice(opcoes)
         print("a CPU escolheu: ", cpu)
         if cpu == "pedra" and player == "papel":
             print("Jogador Venceu!!")
@@ -34,9 +35,7 @@ while valor == True:
         print("\nSegue placar do jogo:\nJogador: ",placarPlayer,"\nCPU: ",placarCpu)
             
         novamente = input("\nGostaria de jogar novamente?\n1 = sim\n2 = não\n")
-        if novamente == "1":
-            valor = True
-        else:
-            valor = False
+        if novamente != "1":
+            break
     except Exception as e:
         print(e)
