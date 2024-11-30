@@ -43,14 +43,6 @@ def ataque_inimigo():
         jogador[0]['hp'] -= inimigo[0]['dano']
         print("Acertou o ataque")
 
-ataque_inimigo()
-ataque_inimigo()
-ataque_inimigo()
-ataque_inimigo()
-ataque_inimigo()
-ataque_inimigo()
-
-info_jogador()
 
 def morre_inimigo(hp):
     if hp <= 0:
