@@ -1,3 +1,4 @@
+from inimigo import *
 import random
 
 jogador = []
@@ -22,18 +23,15 @@ def info_jogador():
     for jogo in jogador:
         print(f"Nome: {jogo['nome']} -- Level: {['level']}\nExp: {jogo['exp']}-{jogo['exp-max']}\nHP: {jogo['hp']}-{jogo['hp-max']}\nDano: {jogo['dano']}\nDefesa: {jogo['defesa']}\n")
 
-cria_jogador("Disco")
-info_jogador()
-
 def ataque_jogador(vida_inimigo, ataque):
-    vida_inimigo -= ataque
-    pass
-
-def checa_jogador():
-    pass
-
-def defesa_jogadro():
-    pass
+    print("Você está atacando:")
+    esquivainimigo = esquiva_inimigo(inimigo[0]['esquiva'])
+    if esquivainimigo is True:
+        print("errou o ataque")
+    else:
+        inimigo[0]['hp'] -= jogador[0]['dano']
+        print("Acertou o ataque")
+        vida_inimigo -= ataque
 
 def esquiva_jogador(esquiva):
     valor = random.randint(0,100)
@@ -49,6 +47,14 @@ def esquiva_jogador(esquiva):
 def levelUp_jogador():
     pass
 
-
 def morre_jogador():
     pass
+
+def checa_jogador():
+    pass
+
+def defesa_jogadro():
+    pass
+
+cria_jogador("Disco")
+info_jogador()

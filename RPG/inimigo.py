@@ -31,8 +31,6 @@ def info_inimigos():
     for x in inimigo:
         print(x)
 
-gera_inimigo(1)
-info_inimigos()
 
 def ataque_inimigo():
     print("O inimigo está atacando:")
@@ -43,7 +41,21 @@ def ataque_inimigo():
         jogador[0]['hp'] -= inimigo[0]['dano']
         print("Acertou o ataque")
 
+def esquiva_inimigo(esquiva):
+    valor = random.randint(0,100)
+    if valor > esquiva:
+        print("Inimigo não esquivou com: ",esquiva)
+        print("Valor tirado: ",valor)
+        return False
+    else:
+        print("Inimigo esquivou do ataque com: ",esquiva)
+        print("Valor tirado: ",valor)
+        return True
 
 def morre_inimigo(hp):
     if hp <= 0:
         print("Inimigo morreu")
+
+
+gera_inimigo(1)
+info_inimigos()
