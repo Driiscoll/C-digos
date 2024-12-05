@@ -10,12 +10,12 @@ def nome_inimigo():
 
 def cria_inimigo():
     npc = {"nome": nome_inimigo(),
-               "level": "1",
+               "level": 1,
                "hp": 100,
                "hp-max": 100,
                "dano": 5,
                "defesa": 3,
-               "cric" : 0.05,
+               "crit" : 5,
                "exp" : 1,
                "esquiva": 10,
                "prec": 90,
@@ -31,14 +31,17 @@ def info_inimigos():
     for x in inimigo:
         print(x)
 
+def jogador_selecionado(valor):
+    jogador_escolhido = jogador[valor]
+    return jogador_escolhido
 
 def ataque_inimigo():
     print("O inimigo está atacando:")
-    esquivaPlayer = esquiva_jogador(jogador[0]['esquiva'])
+    esquivaPlayer = esquiva_jogador(jogador[0]['esquiva']) #trocar valores fixos por função
     if esquivaPlayer is True:
         print("errou o ataque")
     else:
-        jogador[0]['hp'] -= inimigo[0]['dano']
+        jogador[0]['hp'] -= inimigo[0]['dano'] #trocar valores fixos por funções futuramente
         print("Acertou o ataque")
 
 def esquiva_inimigo(esquiva):
@@ -54,6 +57,7 @@ def esquiva_inimigo(esquiva):
 
 def morre_inimigo(hp):
     if hp <= 0:
+        inimigo.remove(ini)
         print("Inimigo morreu")
 
 
