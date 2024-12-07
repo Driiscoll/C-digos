@@ -4,7 +4,16 @@ import random
 inimigo = []
 
 def nome_inimigo():
-    lista_nome = ["Goblin Sombrio", "Dragão de Cinzas", "Espectro da Névoa", "Fera das Sombras", "Basilisco de Pedra", "Quimera Flamejante", "Golem de Ferro", "Vampiro Alado", "Lobo Fantasma", "Hidra do Abismo", "Aranha Colossal", "Troll da Montanha", "Esqueleto Guerreiro", "Serpente do Pântano", "Demônio de Fogo", "Wendigo Gélido", "Harpia Cantante", "Kraken Profundo", "Salamandra Ardente", "Manticora Venenosa"]
+    lista_nome = ["Goblin Sombrio", "Dragão de Cinzas", 
+                  "Espectro da Névoa", "Fera das Sombras", 
+                  "Basilisco de Pedra", "Quimera Flamejante", 
+                  "Golem de Ferro", "Vampiro Alado", 
+                  "Lobo Fantasma", "Hidra do Abismo", 
+                  "Aranha Colossal", "Troll da Montanha", 
+                  "Esqueleto Guerreiro", "Serpente do Pântano", 
+                  "Demônio de Fogo", "Wendigo Gélido", 
+                  "Harpia Cantante", "Kraken Profundo", 
+                  "Salamandra Ardente", "Manticora Venenosa"]
     nome = random.choice(lista_nome)
     return nome
 
@@ -41,7 +50,7 @@ def ataque_inimigo():
     if esquivaPlayer is True:
         print("errou o ataque")
     else:
-        jogador[0]['hp'] -= inimigo[0]['dano'] #trocar valores fixos por funções futuramente
+        jogador[0]['hp'] -= inimigo[0]['dano'] - jogador[0]['defesa'] #trocar valores fixos por funções futuramente
         print("Acertou o ataque")
 
 def esquiva_inimigo(esquiva):
@@ -55,11 +64,10 @@ def esquiva_inimigo(esquiva):
         print("Valor tirado: ",valor)
         return True
 
-def morre_inimigo(hp):
-    if hp <= 0:
-        inimigo.remove(ini)
+def morre_inimigo():
+    if inimigo[0]['hp'] <= 0:
+        del inimigo[0]
         print("Inimigo morreu")
-
-
-gera_inimigo(1)
-info_inimigos()
+        return True
+    else:
+        return False

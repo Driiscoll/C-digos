@@ -48,7 +48,7 @@ def ataque_jogador(vida_inimigo, ataque):
             print("Acertou o ataque CRITICO")
             vida_inimigo -= ataque*jogador[0]['crit']
         else:
-            inimigo[0]['hp'] -= jogador[0]['dano'] #trocar valores fixos futuramente
+            inimigo[0]['hp'] -= jogador[0]['dano'] - inimigo[0]['defesa'] #trocar valores fixos futuramente
             print("Acertou o ataque")
             vida_inimigo -= ataque
 
@@ -94,11 +94,3 @@ def morre_jogador():
 
 def checar_jogador():
     pass
-
-def defesa_jogadro():
-    pass
-
-cria_jogador("Disco")
-info_jogador()
-morre_jogador()
-info_jogador()
